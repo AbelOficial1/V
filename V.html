@@ -1,0 +1,707 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Ganado de Felipe Torres </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <style>
+        /* Custom font sizes and weights to match exactly */
+        .text-xxs {
+            font-size: 7px;
+        }
+
+        .text-xxxs {
+            font-size: 6px;
+        }
+
+        th {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Limit image size in table */
+        td img {
+            max-width: 120px;
+            max-height: 60px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-white p-2">
+    <div class="max-w-full mx-auto border border-black p-1 overflow-x-auto">
+        <!-- Top header row -->
+        <div class="flex flex-wrap justify-between items-center border border-black mb-1 px-1 text-[7px]">
+            <div class="flex flex-wrap items-center space-x-1 mb-1 sm:mb-0">
+                <div class="border border-black px-1 py-[1px] whitespace-nowrap">
+                    Total De Identificadores Vigentes:
+                </div>
+                <div class="border border-black px-2 py-[1px] font-bold whitespace-nowrap">
+                    25
+                </div>
+                <div class="border border-black px-2 py-[1px] font-bold whitespace-nowrap">
+                    UPP:
+                </div>
+                <div class="border border-black px-2 py-[1px] font-bold whitespace-nowrap">
+                    280-4317-91002
+                </div>
+                <div class="border border-black px-2 py-[1px] whitespace-nowrap">
+                    Nombre:
+                </div>
+                <div class="border border-black px-2 py-[1px] font-bold whitespace-nowrap">
+                    Felipe Torres Cruz
+                </div>
+                <div class="border border-black w-5 h-5 flex justify-center items-center ml-1">
+                    <img alt="Logo letter T in black" class="w-4 h-4" height="15" src="Te.png" width="15" />
+                </div>
+            </div>
+            <div class="border border-black px-1 py-[1px] text-center w-full sm:w-auto mb-1 sm:mb-0 whitespace-nowrap">
+                Total De Animales En El Rancho:
+                <span class="font-bold">
+                    11
+                </span>
+            </div>
+            <div class="border border-black px-1 py-[1px] text-center w-full sm:w-auto whitespace-nowrap">
+                Fecha Actualización Al Día:
+                <div class="font-bold" id="currentDate">
+                    09/03/23
+                </div>
+            </div>
+        </div>
+        <!-- Table container with horizontal scroll on small -->
+        <div class="overflow-x-auto">
+            <table id="animalTable"
+                class="w-full min-w-[900px] border-collapse border border-black text-[8px] font-sans">
+                <thead>
+                    <tr class="bg-[#c1d9f0] text-center select-none">
+                        <th class="border border-black px-1 py-1 w-[20px]" data-type="number">N°</th>
+                        <th class="border border-black px-1 py-1 w-[60px]" data-type="string">Ubicado En El Rancho</th>
+                        <th class="border border-black px-1 py-1 w-[90px]" data-type="string">Identificador Oficial</th>
+                        <th class="border border-black px-1 py-1 w-[50px]" data-type="string">Estatus</th>
+                        <th class="border border-black px-1 py-1 w-[40px]" data-type="string">Sexo</th>
+                        <th class="border border-black px-1 py-1 w-[60px]" data-type="string">Fecha Nacimiento</th>
+                        <th class="border border-black px-1 py-1 w-[30px]" data-type="number">Meses</th>
+                        <th class="border border-black px-1 py-1 w-[60px]" data-type="string">Fecha Anotado</th>
+                        <th class="border border-black px-1 py-1 w-[40px]" data-type="string">Arete</th>
+                        <th class="border border-black px-1 py-1 w-[40px]" data-type="string">Color</th>
+                        <th class="border border-black px-1 py-1 w-[120px]" data-type="none">Fotografía o Señale de
+                            Identificación</th>
+                        <th class="border border-black px-1 py-1 w-[80px]" data-type="string">Comentarios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-[#c1d9f0] text-center align-top" data-fecha="05-2024">
+                        <td class="border border-black font-bold py-7 px-1 text-[10px]">23</td>
+                        <td class="border border-black font-bold py-3 px-1 text-[33px]">NO</td>
+                        <td class="border border-black py-6 px-1 text-[13px]">00 28 1219 7466</td>
+                        <td class="border border-black font-bold py-7 px-1 text-[9px]">VIGENTE</td>
+                        <td class="border border-black py-7 px-1 text-[10px]">Macho</td>
+                        <td class="border border-black py-5 px-1 text-[18px]">05-2024</td>
+                        <td class="border border-black font-bold py-5 px-1 text-[20px] mesesContador">12</td>
+                        <td class="border border-black py-7 px-1 text-[10px]">20/06/2024</td>
+                        <td class="border border-black font-bold py-6 px-1 text-[13px]">7466</td>
+                        <td class="border border-black py-7 px-1 text-[9px]">Amarillo</td>
+                        <td class="border border-black py-2 px-1">
+                            <img alt="Two yellow cows standing in a grassy field next to a red vehicle" class="mx-auto"
+                                height="60"
+                                src="https://storage.googleapis.com/a1aa/image/911d0331-31d5-4d6a-d34d-ba648ef1210e.jpg"
+                                width="120" />
+                        </td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="text-center align-top" data-fecha="04-2024">
+                        <td class="border border-black font-bold py-7 px-1 text-[10px]">19</td>
+                        <td class="border border-black font-bold py-3 px-1 text-[33px]">NO</td>
+                        <td class="border border-black py-6 px-1 text-[13px]">00 28 1219 7462</td>
+                        <td class="border border-black py-7 px-1 text-[9px]">VIGENTE</td>
+                        <td class="border border-black py-7 px-1 text-[10px]">Hembra</td>
+                        <td class="border border-black py-5 px-1 text-[18px]">04-2024</td>
+                        <td class="border border-black font-bold py-5 px-1 text-[20px]">13</td>
+                        <td class="border border-black py-7 px-1 text-[10px]">20/06/2024</td>
+                        <td class="border border-black font-bold py-6 px-1 text-[13px]">7462</td>
+                        <td class="border border-black py-7 px-1 text-[9px]">Blanco</td>
+                        <td class="border border-black py-2 px-1">
+                            <img alt="White cow standing in a grassy field" class="mx-auto" height="60"
+                                src="https://storage.googleapis.com/a1aa/image/0189ef51-3e14-4e26-9924-50da04b70c52.jpg"
+                                width="120" />
+                        </td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top" data-fecha="03-2024">
+                        <td class="border border-black font-bold py-7 px-1 text-[10px]">20</td>
+                        <td class="border border-black font-bold py-3 px-1 text-[33px]">SI</td>
+                        <td class="border border-black py-6 px-1 text-[13px]">00 28 1219 7463</td>
+                        <td class="border border-black py-7 px-1 text-[9px]">VIGENTE</td>
+                        <td class="border border-black py-7 px-1 text-[10px]">Macho</td>
+                        <td class="border border-black py-5 px-1 text-[18px]">03-2024</td>
+                        <td class="border border-black font-bold py-5 px-1 text-[20px]">14</td>
+                        <td class="border border-black py-7 px-1 text-[10px]">20/06/2024</td>
+                        <td class="border border-black font-bold py-6 px-1 text-[13px]">7463</td>
+                        <td class="border border-black py-7 px-1 text-[9px]">Chocolate</td>
+                        <td class="border border-black py-2 px-1">
+                            <img alt="Brown cow lying down in a grassy field" class="mx-auto" height="60"
+                                src="https://storage.googleapis.com/a1aa/image/1db9dc76-07a9-40a1-088e-926471aeb86f.jpg"
+                                width="120" />
+                        </td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="text-center align-top" data-fecha="03-2024">
+                        <td class="border border-black font-bold py-7 px-1 text-[10px]">21</td>
+                        <td class="border border-black font-bold py-3 px-1 text-[33px]">SI</td>
+                        <td class="border border-black py-6 px-1 text-[13px]">00 28 1219 7464</td>
+                        <td class="border border-black py-7 px-1 text-[9px]">VIGENTE</td>
+                        <td class="border border-black py-7 px-1 text-[10px]">Hembra</td>
+                        <td class="border border-black py-5 px-1 text-[18px]">03-2024</td>
+                        <td class="border border-black font-bold py-5 px-1 text-[20px]">14</td>
+                        <td class="border border-black py-7 px-1 text-[10px]">20/06/2024</td>
+                        <td class="border border-black font-bold py-6 px-1 text-[13px]">7464</td>
+                        <td class="border border-black py-2 px-1 text-[9px]">Colorado Con Manchas Blancas</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">18</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1219 7461</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">01-2024</td>
+                        <td class="border border-black font-bold py-2 px-1">16</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">20/06/2024</td>
+                        <td class="border border-black font-bold py-2 px-1">7461</td>
+                        <td class="border border-black py-2 px-1">Amarillo</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">22</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1219 7465</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">01-2024</td>
+                        <td class="border border-black font-bold py-2 px-1">16</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">20/06/2024</td>
+                        <td class="border border-black font-bold py-2 px-1">7465</td>
+                        <td class="border border-black py-2 px-1">Negro</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">16</td>
+                        <td class="border border-black font-bold py-2 px-1">SI</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1215 0039</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">06-2023</td>
+                        <td class="border border-black font-bold py-2 px-1">23</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">18/03/2024</td>
+                        <td class="border border-black font-bold py-2 px-1">0039</td>
+                        <td class="border border-black py-2 px-1">Colorado</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">17</td>
+                        <td class="border border-black font-bold py-2 px-1">SI</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1215 0040</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">06-2023</td>
+                        <td class="border border-black font-bold py-2 px-1">23</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">20/06/2024</td>
+                        <td class="border border-black font-bold py-2 px-1">0040</td>
+                        <td class="border border-black py-2 px-1">Colorado</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">12</td>
+                        <td class="border border-black font-bold py-2 px-1">SI</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1159 5553</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">03-2022</td>
+                        <td class="border border-black font-bold py-2 px-1">38</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">25/04/2022</td>
+                        <td class="border border-black font-bold py-2 px-1">5553</td>
+                        <td class="border border-black py-2 px-1">Blanco</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">9</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1157 5043</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">02-2022</td>
+                        <td class="border border-black font-bold py-2 px-1">39</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">22/02/2022</td>
+                        <td class="border border-black font-bold py-2 px-1">5043</td>
+                        <td class="border border-black py-2 px-1">Claro</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1">Becerra chueca</td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">24</td>
+                        <td class="border border-black font-bold py-2 px-1">SI</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1219 7467</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Macho</td>
+                        <td class="border border-black py-2 px-1">06-2021</td>
+                        <td class="border border-black font-bold py-2 px-1">47</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">20/06/2024</td>
+                        <td class="border border-black font-bold py-2 px-1">7467</td>
+                        <td class="border border-black py-2 px-1">Negro</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">10</td>
+                        <td class="border border-black font-bold py-2 px-1">SI</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1157 5045</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">05-2021</td>
+                        <td class="border border-black font-bold py-2 px-1">48</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">22/02/2022</td>
+                        <td class="border border-black font-bold py-2 px-1">5045</td>
+                        <td class="border border-black py-2 px-1">Colorado con manchas blancas</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">4</td>
+                        <td class="border border-black font-bold py-2 px-1">SI</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1091 8470</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">03-2020</td>
+                        <td class="border border-black font-bold py-2 px-1">62</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">21/03/2020</td>
+                        <td class="border border-black font-bold py-2 px-1">8470</td>
+                        <td class="border border-black py-2 px-1">Colorado</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">13</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1177 2467</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Macho</td>
+                        <td class="border border-black py-2 px-1">01-2020</td>
+                        <td class="border border-black font-bold py-2 px-1">64</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">28/10/2022</td>
+                        <td class="border border-black font-bold py-2 px-1">2467</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1">rearetado a 7467</td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">15</td>
+                        <td class="border border-black font-bold py-2 px-1">SI</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1197 0337</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">05-2019</td>
+                        <td class="border border-black font-bold py-2 px-1">72</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">18/03/2024</td>
+                        <td class="border border-black font-bold py-2 px-1">0337</td>
+                        <td class="border border-black py-2 px-1">Amarillo</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">11</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1157 5049</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">01-2019</td>
+                        <td class="border border-black font-bold py-2 px-1">76</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">02/02/2022</td>
+                        <td class="border border-black font-bold py-2 px-1">5049</td>
+                        <td class="border border-black py-2 px-1">Blanco</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1">Vaca blanca grande</td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">2</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1009 8236</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">09-2017</td>
+                        <td class="border border-black font-bold py-2 px-1">92</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">04/12/2017</td>
+                        <td class="border border-black font-bold py-2 px-1">8236</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">8</td>
+                        <td class="border border-black font-bold py-2 px-1">SI</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1150 9050</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">08-2016</td>
+                        <td class="border border-black font-bold py-2 px-1">105</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">22/11/2021</td>
+                        <td class="border border-black font-bold py-2 px-1">9050</td>
+                        <td class="border border-black py-2 px-1">Colorado</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">14</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1177 2468</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">06-2016</td>
+                        <td class="border border-black font-bold py-2 px-1">107</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">30/09/2019</td>
+                        <td class="border border-black font-bold py-2 px-1">2468</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">25</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 30 6722 5790</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">11-2015</td>
+                        <td class="border border-black font-bold py-2 px-1">114</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">03/04/2017</td>
+                        <td class="border border-black font-bold py-2 px-1">5790</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">1</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 0851 8756</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">09-2013</td>
+                        <td class="border border-black font-bold py-2 px-1">140</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">20/10/2013</td>
+                        <td class="border border-black font-bold py-2 px-1">8756</td>
+                        <td class="border border-black py-2 px-1">Amarillo</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1">Vaca Tatiana grande de color amarillo</td>
+                    </tr>
+                    <tr class="text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">7</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1129 0305</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">03-2013</td>
+                        <td class="border border-black font-bold py-2 px-1">146</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">26/03/2021</td>
+                        <td class="border border-black font-bold py-2 px-1">0305</td>
+                        <td class="border border-black py-2 px-1">Colorado</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1">Vaca grande de cuerno mocho</td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">6</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1129 0302</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">02-2013</td>
+                        <td class="border border-black font-bold py-2 px-1">147</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">26/03/2021</td>
+                        <td class="border border-black font-bold py-2 px-1">0302</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">3</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1056 7931</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">05-2011</td>
+                        <td class="border border-black font-bold py-2 px-1">168</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">06/05/2019</td>
+                        <td class="border border-black font-bold py-2 px-1">7931</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">5</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1094 0183</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">VIGENTE</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">04-2010</td>
+                        <td class="border border-black font-bold py-2 px-1">181</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">28/04/2020</td>
+                        <td class="border border-black font-bold py-2 px-1">0183</td>
+                        <td class="border border-black py-2 px-1">Blanco</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1">Se murio atascada</td>
+                    </tr>
+                    <tr class="text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">33</td>
+                        <td class="border border-black font-bold py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1 text-[6px]"></td>
+                        <td class="border border-black py-2 px-1 text-[6px]">Sin Arete</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">02-2025</td>
+                        <td class="border border-black font-bold py-2 px-1">3</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black font-bold py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">32</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1177 2473</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">identificador dado de baja por trazabilidad
+                            pendiente</td>
+                        <td class="border border-black py-2 px-1">Macho</td>
+                        <td class="border border-black py-2 px-1">07-2022</td>
+                        <td class="border border-black font-bold py-2 px-1">34</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">28/10/2022</td>
+                        <td class="border border-black font-bold py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1">Identificador dado de baja</td>
+                    </tr>
+                    <tr class="text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">31</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1079 7816</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">identificador dado de baja por trazabilidad
+                            pendiente</td>
+                        <td class="border border-black py-2 px-1">Macho</td>
+                        <td class="border border-black py-2 px-1">06-2019</td>
+                        <td class="border border-black font-bold py-2 px-1">71</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">03/12/2019</td>
+                        <td class="border border-black font-bold py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1">Identificador dado de baja</td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">28</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1000 4334</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">identificador dado de baja por trazabilidad
+                            pendiente</td>
+                        <td class="border border-black py-2 px-1">Macho</td>
+                        <td class="border border-black py-2 px-1">08-2017</td>
+                        <td class="border border-black font-bold py-2 px-1">93</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">21/09/2017</td>
+                        <td class="border border-black font-bold py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1">Identificador dado de baja</td>
+                    </tr>
+                    <tr class="text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">29</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1000 4352</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">identificador dado de baja por sacrificio
+                            en rastro</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">03-2017</td>
+                        <td class="border border-black font-bold py-2 px-1">98</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">21/09/2017</td>
+                        <td class="border border-black font-bold py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1">Identificador dado de baja</td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">27</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 0916 5454</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">identificador dado de baja por sacrificio
+                            en rastro</td>
+                        <td class="border border-black py-2 px-1">Macho</td>
+                        <td class="border border-black py-2 px-1">04-2014</td>
+                        <td class="border border-black font-bold py-2 px-1">133</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">12/05/2015</td>
+                        <td class="border border-black font-bold py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1">Identificador dado de baja</td>
+                    </tr>
+                    <tr class="text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">30</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 1070 9651</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">identificador dado de baja por rearetado
+                        </td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">00-00</td>
+                        <td class="border border-black font-bold py-2 px-1">0</td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black font-bold py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1">Identificador dado de baja</td>
+                    </tr>
+                    <tr class="bg-[#c1d9f0] text-center align-top">
+                        <td class="border border-black font-bold py-2 px-1">26</td>
+                        <td class="border border-black font-bold py-2 px-1">NO</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">00 28 0855 0316</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">Identificador dado de baja por edad</td>
+                        <td class="border border-black py-2 px-1">Hembra</td>
+                        <td class="border border-black py-2 px-1">02-2006</td>
+                        <td class="border border-black font-bold py-2 px-1">231</td>
+                        <td class="border border-black py-2 px-1 text-[6px]">10/11/2013</td>
+                        <td class="border border-black font-bold py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black py-2 px-1">Identificador dado de baja</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-3 text-center">
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="downloadPdfBtn">
+                Descargar PDF
+            </button>
+        </div>
+    </div>
+    <script>
+        // Update current date in format DD/MM/YY
+        function updateCurrentDate() {
+            const dateElem = document.getElementById('currentDate');
+            if (!dateElem) return;
+            const now = new Date();
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = String(now.getFullYear()).slice(-2);
+            dateElem.textContent = `${day}/${month}/${year}`;
+        }
+        updateCurrentDate();
+
+        // Sort table function
+        document.querySelectorAll('#animalTable thead th').forEach((th, index) => {
+            if (th.dataset.type === "none") return; // skip image column
+            let asc = true;
+            th.addEventListener('click', () => {
+                const table = th.closest('table');
+                const tbody = table.querySelector('tbody');
+                const rows = Array.from(tbody.querySelectorAll('tr'));
+                const type = th.dataset.type;
+                rows.sort((a, b) => {
+                    let aText = a.children[index].textContent.trim();
+                    let bText = b.children[index].textContent.trim();
+
+                    // For empty cells treat as smallest
+                    if (aText === '') return 1;
+                    if (bText === '') return -1;
+
+                    if (type === 'number') {
+                        aText = aText.replace(/[^0-9.-]/g, '');
+                        bText = bText.replace(/[^0-9.-]/g, '');
+                        return asc ? (parseFloat(aText) - parseFloat(bText)) : (parseFloat(bText) - parseFloat(aText));
+                    } else if (type === 'string') {
+                        return asc ? aText.localeCompare(bText) : bText.localeCompare(aText);
+                    }
+                    return 0;
+                });
+                // Remove old rows
+                while (tbody.firstChild) {
+                    tbody.removeChild(tbody.firstChild);
+                }
+                // Append sorted rows
+                rows.forEach(row => tbody.appendChild(row));
+                asc = !asc;
+            });
+        });
+
+        // PDF download button handler
+        document.getElementById('downloadPdfBtn').addEventListener('click', async () => {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('l', 'pt', 'a4');
+            const container = document.getElementById('tableContainer');
+
+            // Use html2canvas to capture the container as image
+            const canvas = await html2canvas(container, { scale: 2 });
+            const imgData = canvas.toDataURL('image/png');
+
+            // Calculate image dimensions to fit A4 landscape
+            const pdfWidth = doc.internal.pageSize.getWidth();
+            const pdfHeight = doc.internal.pageSize.getHeight();
+            const imgProps = doc.getImageProperties(imgData);
+            const imgWidth = pdfWidth;
+            const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+
+            // If image height is bigger than page height, scale down
+            let finalImgHeight = imgHeight;
+            if (imgHeight > pdfHeight) {
+                finalImgHeight = pdfHeight;
+            }
+
+            doc.addImage(imgData, 'PNG', 0, 0, imgWidth, finalImgHeight);
+            doc.save('animal_table.pdf');
+        });
+
+
+
+
+
+
+
+        function calcularMesesDesdeFecha(fechaTexto) {
+            const [mes, año] = fechaTexto.split("-").map(Number);
+            const fechaInicial = new Date(año, mes - 1, 1);
+            const fechaActual = new Date();
+
+            let años = fechaActual.getFullYear() - fechaInicial.getFullYear();
+            let meses = fechaActual.getMonth() - fechaInicial.getMonth();
+            let totalMeses = años * 12 + meses;
+
+            if (fechaActual.getDate() < fechaInicial.getDate()) {
+                totalMeses--;
+            }
+
+            return totalMeses;
+        }
+
+        function actualizarContadores() {
+            const filas = document.querySelectorAll("tr[data-fecha]");
+
+            filas.forEach(fila => {
+                const fecha = fila.getAttribute("data-fecha");
+                const celdaMeses = fila.querySelector(".mesesContador");
+                const meses = calcularMesesDesdeFecha(fecha);
+                celdaMeses.textContent = meses;
+            });
+        }
+
+        window.onload = actualizarContadores;
+        setInterval(actualizarContadores, 1000); // Actualiza cada segundo
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

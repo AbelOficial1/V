@@ -319,7 +319,7 @@
                         <!-- <td class="border border-black font-bold py-2 px-1 text-[9px]">Sin Arete</td> -->
                         <td class="border border-black py-2 px-1 text-[10px]">Hembra</td>
                         <!-- <td class="border border-black py-2 px-1 text-[18px]">02-2025</td> -->
-                        <td class="border border-black font-bold py-2 px-1 text-[20px] mesesContador">3</td>
+                        <td class="border border-black font-bold py-2 px-1 text-[20px] mesesContador">1</td>
                         <!-- <td class="border border-black py-2 px-1 text-[10px]"></td> -->
                         <td class="border border-black font-bold py-2 px-1 text-[13px]"></td>
                         <td class="border border-black py-2 px-1 text-[9px]">Colorado</td>
@@ -353,7 +353,7 @@
                         <!-- <td class="border border-black font-bold py-2 px-1 text-[9px]">Sin Arete</td> -->
                         <td class="border border-black py-2 px-1 text-[10px]">Hembra</td>
                         <!-- <td class="border border-black py-2 px-1 text-[18px]">06-2025</td> -->
-                        <td class="border border-black font-bold py-2 px-1 text-[20px] mesesContador">3</td>
+                        <td class="border border-black font-bold py-2 px-1 text-[20px] mesesContador"></td>
                         <!-- <td class="border border-black py-2 px-1 text-[10px]"></td> -->
                         <td class="border border-black font-bold py-2 px-1 text-[13px]"></td>
                         <td class="border border-black py-2 px-1 text-[9px]">Negro</td>
@@ -425,38 +425,6 @@
                 asc = !asc;
             });
         });
-
-        // PDF download button handler
-        document.getElementById('downloadPdfBtn').addEventListener('click', async () => {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF('l', 'pt', 'a4');
-            const container = document.getElementById('tableContainer');
-
-            // Use html2canvas to capture the container as image
-            const canvas = await html2canvas(container, { scale: 2 });
-            const imgData = canvas.toDataURL('image/png');
-
-            // Calculate image dimensions to fit A4 landscape
-            const pdfWidth = doc.internal.pageSize.getWidth();
-            const pdfHeight = doc.internal.pageSize.getHeight();
-            const imgProps = doc.getImageProperties(imgData);
-            const imgWidth = pdfWidth;
-            const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
-
-            // If image height is bigger than page height, scale down
-            let finalImgHeight = imgHeight;
-            if (imgHeight > pdfHeight) {
-                finalImgHeight = pdfHeight;
-            }
-
-            doc.addImage(imgData, 'PNG', 0, 0, imgWidth, finalImgHeight);
-            doc.save('animal_table.pdf');
-        });
-
-
-
-
-
 
 
         function calcularMesesDesdeFecha(fechaTexto) {

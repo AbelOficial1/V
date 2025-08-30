@@ -46,7 +46,8 @@
             left: 1px;
             content: "✔";
             font-size: 40px;
-            color: rgb(255, 153, 0);
+            color: blue;
+            /* color: rgb(255, 153, 0); */
             transform: scale(0);
             transition: all 0.2s ease-in-out;
         }
@@ -85,6 +86,13 @@
                 transform: scale(1);
             }
         }
+            
+
+
+
+        td { border: 1px solid black; padding: 8px; text-align: center; }
+        .contador { margin-left: 8px; font-weight: bold; color: blue; font-size: 50px; }
+
     </style>
 </head>
 
@@ -113,7 +121,7 @@
             <div class="border border-black px-1 py-[1px] text-center w-full sm:w-auto mb-1 sm:mb-0 whitespace-nowrap">
                 Total De Animales En El Rancho:
                 <span class="font-bold">
-                    12
+                    11
                 </span>
             </div>
             <div class="border border-black px-1 py-[1px] text-center w-full sm:w-auto whitespace-nowrap">
@@ -121,6 +129,11 @@
                 <div class="font-bold" id="currentDate">
                     09/03/23
                 </div>
+            </div>
+            <div class="mt-3 text-center flex items-center justify-center w-screen py-1">
+            <button class="bg-blue-600 hover:bg-blue-700 text-center text-white font-bold py-1 px-2 rounded" id="downloadPdfBtn">
+                <a href="V.html">Regristro Completo</a>
+            </button>
             </div>
         </div>
         <!-- Table container with horizontal scroll on small -->
@@ -167,7 +180,7 @@
                         <td class="border border-black py-2 px-1"><img alt="" class="mx-auto" height="60" src="9050.png"
                                 width="120" loading="lazy" />
                         </td>
-                        <td class="border border-black"><input class="checkbox" type="checkbox" id="checkbox"></td>
+                        <td class="border border-black celdaCheck"><input class="checkbox" type="checkbox" id="checkbox"><span class="contador"></span></td>
                         <td class="border border-black py-2 px-1"></td>
                     </tr>
                     <tr class="bg-[#c1d9f0] text-center" data-fecha="03-2024">
@@ -185,8 +198,8 @@
                             <img alt="Brown cow lying down in a grassy field" class="mx-auto" height="60" src="7463.png"
                                 width="120" loading="lazy" />
                         </td>
-                        <td class="border border-black"><input class="checkbox" type="checkbox" id="checkbox"></td>
-                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black celdaCheck"><input class="checkbox" type="checkbox" id="checkbox"><span class="contador"></span></td>
+                        <td class="border border-black py-2 px-1">Hijo de la vaca 0337</td>
                     </tr>
                     <tr class="text-center" data-fecha="03-2024">
                         <td class="border border-black font-bold py-7 px-1 text-[10px]">3</td>
@@ -202,8 +215,8 @@
                         <td class="border border-black py-2 px-1"><img alt="" class="mx-auto" height="60" src="7464.png"
                                 width="120" loading="lazy" />
                         </td>
-                        <td class="border border-black"><input class="checkbox" type="checkbox" id="checkbox"></td>
-                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black celdaCheck"><input class="checkbox" type="checkbox" id="checkbox"><span class="contador"></span></td>
+                        <td class="border border-black py-2 px-1">Hija de la vaca 5045</td>
                     </tr>
 
                     <tr class="bg-[#c1d9f0] text-center" data-fecha="06-2023">
@@ -220,28 +233,12 @@
                         <td class="border border-black py-2 px-1"><img alt="" class="mx-auto" height="60" src="0339.png"
                                 width="120" loading="lazy" />
                         </td>
-                        <td class="border border-black"><input class="checkbox" type="checkbox" id="checkbox"></td>
+                        <td class="border border-black celdaCheck"><input class="checkbox" type="checkbox" id="checkbox"><span class="contador"></span></td>
                         <td class="border border-black py-2 px-1"></td>
                     </tr>
-                    <tr class="text-center" data-fecha="06-2023">
+                    
+                    <tr class="text-center" data-fecha="03-2022">
                         <td class="border border-black font-bold py-2 px-1 text-[10px]">5</td>
-                        <!-- <td class="border border-black font-bold py-2 px-1 text-[33px]">SI</td> -->
-                        <!-- <td class="border border-black py-2 px-1 text-[13px]">00 28 1215 0040</td> -->
-                        <!-- <td class="border border-black font-bold py-2 px-1 text-[9px]">VIGENTE</td> -->
-                        <td class="border border-black py-2 px-1 text-[10px]">Hembra</td>
-                        <!-- <td class="border border-black py-2 px-1 text-[18px]">06-2023</td> -->
-                        <td class="border border-black font-bold py-2 px-1 text-[20px] mesesContador">23</td>
-                        <!-- <td class="border border-black py-2 px-1 text-[10px]">20/06/2024</td> -->
-                        <td class="border border-black font-bold py-2 px-1 text-[13px]">0040</td>
-                        <td class="border border-black py-2 px-1 text-[9px]">Colorado</td>
-                        <td class="border border-black py-2 px-1"><img alt="" class="mx-auto" height="60" src="0040.png"
-                                width="120" loading="lazy" />
-                        </td>
-                        <td class="border border-black"><input class="checkbox" type="checkbox" id="checkbox"></td>
-                        <td class="border border-black py-2 px-1"></td>
-                    </tr>
-                    <tr class="bg-[#c1d9f0] text-center" data-fecha="03-2022">
-                        <td class="border border-black font-bold py-2 px-1 text-[10px]">6</td>
                         <!-- <td class="border border-black font-bold py-2 px-1 text-[33px]">SI</td> -->
                         <!-- <td class="border border-black py-2 px-1 text-[13px]">00 28 1159 5553</td> -->
                         <!-- <td class="border border-black font-bold py-2 px-1 text-[9px]">VIGENTE</td> -->
@@ -254,12 +251,12 @@
                         <td class="border border-black py-2 px-1"><img alt="" class="mx-auto" height="60" src="5553.png"
                                 width="120" loading="lazy" />
                         </td>
-                        <td class="border border-black"><input class="checkbox" type="checkbox" id="checkbox"></td>
+                        <td class="border border-black celdaCheck"><input class="checkbox" type="checkbox" id="checkbox"><span class="contador"></span></td>
                         <td class="border border-black py-2 px-1"></td>
                     </tr>
 
-                    <tr class="text-center" data-fecha="05-2021">
-                        <td class="border border-black font-bold py-2 px-1 text-[10px]">7</td>
+                    <tr class="bg-[#c1d9f0] text-center" data-fecha="05-2021">
+                        <td class="border border-black font-bold py-2 px-1 text-[10px]">6</td>
                         <!-- <td class="border border-black font-bold py-2 px-1 text-[33px]">SI</td> -->
                         <!-- <td class="border border-black py-2 px-1 text-[13px]">00 28 1157 5045</td> -->
                         <!-- <td class="border border-black font-bold py-2 px-1 text-[9px]">VIGENTE</td> -->
@@ -272,11 +269,11 @@
                         <td class="border border-black py-2 px-1"><img alt="" class="mx-auto" height="60" src="5045.png"
                                 width="120" loading="lazy" />
                         </td>
-                        <td class="border border-black"><input class="checkbox" type="checkbox" id="checkbox"></td>
+                        <td class="border border-black celdaCheck"><input class="checkbox" type="checkbox" id="checkbox"><span class="contador"></span></td>
                         <td class="border border-black py-2 px-1"></td>
                     </tr>
-                    <tr class="bg-[#c1d9f0] text-center" data-fecha="03-2020">
-                        <td class="border border-black font-bold py-2 px-1 text-[10px]">8</td>
+                    <tr class="text-center" data-fecha="03-2020">
+                        <td class="border border-black font-bold py-2 px-1 text-[10px]">7</td>
                         <!-- <td class="border border-black font-bold py-2 px-1 text-[33px]">SI</td> -->
                         <!-- <td class="border border-black py-2 px-1 text-[13px]">00 28 1091 8470</td> -->
                         <!-- <td class="border border-black font-bold py-2 px-1 text-[9px]">VIGENTE</td> -->
@@ -289,11 +286,11 @@
                         <td class="border border-black py-2 px-1"><img alt="" class="mx-auto" height="60" src="8470.png"
                                 width="120" loading="lazy" />
                         </td>
-                        <td class="border border-black"><input class="checkbox" type="checkbox" id="checkbox"></td>
+                        <td class="border border-black celdaCheck"><input class="checkbox" type="checkbox" id="checkbox"><span class="contador"></span></td>
                         <td class="border border-black py-2 px-1"></td>
                     </tr>
-                    <tr class=" text-center" data-fecha="05-2019">
-                        <td class="border border-black font-bold py-2 px-1 text-[10px]">9</td>
+                    <tr class="bg-[#c1d9f0] text-center" data-fecha="05-2019">
+                        <td class="border border-black font-bold py-2 px-1 text-[10px]">8</td>
                         <!-- <td class="border border-black font-bold py-2 px-1 text-[33px]">SI</td> -->
                         <!-- <td class="border border-black py-2 px-1 text-[13px]">00 28 1197 0337</td> -->
                         <!-- <td class="border border-black font-bold py-2 px-1 text-[9px]">VIGENTE</td> -->
@@ -306,61 +303,61 @@
                         <td class="border border-black py-2 px-1"><img alt="" class="mx-auto" height="60" src="0337.png"
                                 width="120" loading="lazy" />
                         </td>
-                        <td class="border border-black"><input class="checkbox" type="checkbox" id="checkbox"></td>
-                        <td class="border border-black py-2 px-1"></td>
+                        <td class="border border-black celdaCheck"><input class="checkbox" type="checkbox" id="checkbox"><span class="contador"></span></td>
+                        <td class="border border-black py-2 px-1">Vaca tragona</td>
                     </tr>
 
 
 
-                    <tr class="bg-[#c1d9f0] text-center" data-fecha="02-2025">
-                        <td class="border border-black font-bold py-2 px-1 text-[10px]">10</td>
+                    <tr class="text-center" data-fecha="02-2025">
+                        <td class="border border-black font-bold py-2 px-1 text-[10px]">9</td>
                         <!-- <td class="border border-black font-bold py-2 px-1 text-[33px]">SI</td> -->
-                        <!-- <td class="border border-black py-2 px-1 text-[13px]"></td> -->
-                        <!-- <td class="border border-black font-bold py-2 px-1 text-[9px]">Sin Arete</td> -->
+                        <!-- <td class="border border-black py-2 px-1 text-[13px]">00 28 1249 9749</td> -->
+                        <!-- <td class="border border-black font-bold py-2 px-1 text-[9px]">VIGENTE</td> -->
                         <td class="border border-black py-2 px-1 text-[10px]">Hembra</td>
                         <!-- <td class="border border-black py-2 px-1 text-[18px]">02-2025</td> -->
                         <td class="border border-black font-bold py-2 px-1 text-[20px] mesesContador">1</td>
-                        <!-- <td class="border border-black py-2 px-1 text-[10px]"></td> -->
-                        <td class="border border-black font-bold py-2 px-1 text-[13px]"></td>
+                        <!-- <td class="border border-black py-2 px-1 text-[10px]">16/08/2025</td> -->
+                        <td class="border border-black font-bold py-2 px-1 text-[13px]">9749</td>
                         <td class="border border-black py-2 px-1 text-[9px]">Colorado</td>
                         <td class="border border-black py-2 px-1"><img alt="" class="mx-auto" height="60"
                                 src="02-2025.png" width="120" loading="lazy" />
                         </td>
-                        <td class="border border-black"><input class="checkbox" type="checkbox" id="checkbox"></td>
+                        <td class="border border-black celdaCheck"><input class="checkbox" type="checkbox" id="checkbox"><span class="contador"></span></td>
                         <td class="border border-black py-2 px-1">Hija de la vaca 8470</td>
                     </tr>
-                    <tr class=" text-center" data-fecha="06-2025">
-                        <td class="border border-black font-bold py-2 px-1 text-[10px]">11</td>
+                    <tr class="bg-[#c1d9f0] text-center" data-fecha="06-2025">
+                        <td class="border border-black font-bold py-2 px-1 text-[10px]">10</td>
                         <!-- <td class="border border-black font-bold py-2 px-1 text-[33px]">SI</td> -->
-                        <!-- <td class="border border-black py-2 px-1 text-[13px]"></td> -->
-                        <!-- <td class="border border-black font-bold py-2 px-1 text-[9px]">Sin Arete</td> -->
+                        <!-- <td class="border border-black py-2 px-1 text-[13px]">00 28 1248 9123</td> -->
+                        <!-- <td class="border border-black font-bold py-2 px-1 text-[9px]">VIGENTE</td> -->
                         <td class="border border-black py-2 px-1 text-[10px]">Hembra</td>
                         <!-- <td class="border border-black py-2 px-1 text-[18px]">06-2025</td> -->
                         <td class="border border-black font-bold py-2 px-1 text-[20px] mesesContador">3</td>
-                        <!-- <td class="border border-black py-2 px-1 text-[10px]"></td> -->
-                        <td class="border border-black font-bold py-2 px-1 text-[13px]"></td>
+                        <!-- <td class="border border-black py-2 px-1 text-[10px]">19/08/2025</td> -->
+                        <td class="border border-black font-bold py-2 px-1 text-[13px]">9123</td>
                         <td class="border border-black py-2 px-1 text-[9px]">Negro</td>
                         <td class="border border-black py-2 px-1"><img alt="" class="mx-auto" height="60"
                                 src="06-2025.jpg" width="120" loading="lazy" />
                         </td>
-                        <td class="border border-black"><input class="checkbox" type="checkbox" id="checkbox"></td>
+                        <td class="border border-black celdaCheck"><input class="checkbox" type="checkbox" id="checkbox"><span class="contador"></span></td>
                         <td class="border border-black py-2 px-1">Hija de vaca 5045</td>
                     </tr>
-                    <tr class="bg-[#c1d9f0] text-center" data-fecha="06-2025">
-                        <td class="border border-black font-bold py-2 px-1 text-[10px]">12</td>
+                    <tr class="text-center" data-fecha="06-2025">
+                        <td class="border border-black font-bold py-2 px-1 text-[10px]">11</td>
                         <!-- <td class="border border-black font-bold py-2 px-1 text-[33px]">SI</td> -->
-                        <!-- <td class="border border-black py-2 px-1 text-[13px]"></td> -->
-                        <!-- <td class="border border-black font-bold py-2 px-1 text-[9px]">Sin Arete</td> -->
+                        <!-- <td class="border border-black py-2 px-1 text-[13px]">00 28 1249 9748</td> -->
+                        <!-- <td class="border border-black font-bold py-2 px-1 text-[9px]">VIGENTE</td> -->
                         <td class="border border-black py-2 px-1 text-[10px]">Hembra</td>
                         <!-- <td class="border border-black py-2 px-1 text-[18px]">06-2025</td> -->
-                        <td class="border border-black font-bold py-2 px-1 text-[20px] mesesContador"></td>
-                        <!-- <td class="border border-black py-2 px-1 text-[10px]"></td> -->
-                        <td class="border border-black font-bold py-2 px-1 text-[13px]"></td>
+                        <td class="border border-black font-bold py-2 px-1 text-[20px] mesesContador">1</td>
+                        <!-- <td class="border border-black py-2 px-1 text-[10px]">16/08/2025</td> -->
+                        <td class="border border-black font-bold py-2 px-1 text-[13px]">9748</td>
                         <td class="border border-black py-2 px-1 text-[9px]">Negro</td>
                         <td class="border border-black py-2 px-1"><img alt="" class="mx-auto" height="60"
                                 src="06-2025(1).jpg" width="120" loading="lazy" />
                         </td>
-                        <td class="border border-black"><input class="checkbox" type="checkbox" id="checkbox"></td>
+                        <td class="border border-black celdaCheck"><input class="checkbox" type="checkbox" id="checkbox"><span class="contador"></span></td>
                         <td class="border border-black py-2 px-1">Hija de vaca 9050</td>
                     </tr>
 
@@ -371,11 +368,7 @@
             <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                 onclick="resetCheckboxes()">Desmarcar</button>
         </div>
-        <!-- <div class="mt-3 text-center">
-            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="downloadPdfBtn">
-                Descargar PDF
-            </button>
-        </div> -->
+        
     </div>
     <script>
         // Update current date in format DD/MM/YY
@@ -460,6 +453,8 @@
         function resetCheckboxes() {
             const checkboxes = document.querySelectorAll('input[type="checkbox"]');
             checkboxes.forEach((checkbox) => {
+                span = checkbox.nextElementSibling;
+                span.textContent = "";
                 checkbox.checked = false;
             });
         }
@@ -467,8 +462,32 @@
 
 
 
+        document.addEventListener("DOMContentLoaded", () => {
+      const checkboxes = document.querySelectorAll(".checkbox");
+      const contadores = document.querySelectorAll(".contador");
 
-    </script>
+      function actualizarTotal() {
+        // contar todos los checkboxes marcados
+        let total = 0;
+        checkboxes.forEach(chk => {
+          if (chk.checked) total++;
+        });
+
+        // mostrar total junto a los checkboxes marcados
+        checkboxes.forEach((chk, index) => {
+          const span = contadores[index];
+          if (chk.checked) {
+            span.textContent = total; // total global
+          } else {
+            span.textContent = ""; // vacío si no está marcado
+          }
+        });
+      }
+
+      checkboxes.forEach(chk => chk.addEventListener("change", actualizarTotal));
+    });
+  </script>
+
 </body>
 
 </html>
